@@ -59,4 +59,7 @@ def statistics():
     fig = px.histogram(df, x='rating', nbins=10, color="smell", facet_row="smell")
     fig.for_each_annotation(lambda a: a.update(text=a.text.split("=")[-1]))
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    return render_template('statistics.html', graphJSON=graphJSON)
+    avg_vanilla = df.query('smell == "Vanilla"')['rating'].mean()
+    avg_coriander = df.query('smell == "Coriander"')['rating'].mean()
+    avg_violet = df.query('smell == "Violet"')['rating'].mean()
+    return render_template('statistics.html', graphJSON=graphJSON, avg_vanilla=avg_vanilla, avg_coriander=avg_coriander, avg_violet=avg_violet)

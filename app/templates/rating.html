@@ -4,30 +4,7 @@
     <h1>Rate the smells</h1>
     <div class="row">
         <div class="col-md-4">
-	    <div class="container">
-            	{{wtf.form_field(form.va_rating, min="1", max="10", list="tickmarks", oninput="box1_value.innerText = this.value")}}
-    		<p id="box1_value" style="display: block;height: 30px;width: 30px;line-height: 30px;-moz-border-radius: 30px;border-radius: 30px;background-color: grey;color: white;text-align: center;font-size: 2em;">5</p>
-	    </div>            
-	    <div class="container">
-	    	{{wtf.form_field(form.co_rating, min="1", max="10", list="tickmarks", oninput="box2_value.innerText = this.value")}}
-                <p id="box2_value" style="display: block;height: 30px;width: 30px;line-height: 30px;-moz-border-radius: 30px;border-radius: 30px;background-color: grey;color: white;text-align: center;font-size: 2em;">5</p>
-            </div>
-	    <div class="container">
-            	{{wtf.form_field(form.vi_rating, min="1",max="10", list="tickmarks", oninput="box3_value.innerText = this.value")}}
-                <p id="box3_value" style="display: block;height: 30px;width: 30px;line-height: 30px;-moz-border-radius: 30px;border-radius: 30px;background-color: grey;color: white;text-align: center;font-size: 2em;">5</p>
-            </div>
-            <datalist id="tickmarks">
-              <option value="1" label="1"</option>
-              <option value="2" label="2"</option>
-              <option value="3" label="3"</option>
-              <option value="4" label="4"</option>
-              <option value="5" label="5"</option>
-              <option value="6" label="6"</option>
-              <option value="7" label="7"</option>
-              <option value="8" label="8"</option>
-              <option value="9" label="9"</option>
-              <option value="10" label="10"</option>
-            </datalist>
-        </div>
+	    {{wtf.quick_form(form)}}
+	</div>
     </div>
 {% endblock %}

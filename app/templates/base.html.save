@@ -1,0 +1,10 @@
+<!doctype html>
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Bristol Data & AI Smellcase</title>
+      {% else %}
+      <title>Welcome to Bristol Data & AI         <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

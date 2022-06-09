@@ -9,7 +9,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Sign In')
 
 class SmellForm(FlaskForm):
-    va_rating = IntegerRangeField('Rating for Box 1')
-    co_rating = IntegerRangeField('Rating for Box 2')
-    vi_rating = IntegerRangeField('Rating for Box 3')
+    va_rating = IntegerRangeField('Rating for Box 1', validators=[DataRequired()])
+    co_rating = IntegerRangeField('Rating for Box 2', validators=[DataRequired()])
+    vi_rating = IntegerRangeField('Rating for Box 3', validators=[DataRequired()])
     submit = SubmitField('Submit rating')
